@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    // Colores Principales Night
+    <color name="primary">#2B2B2B</color>
+    <color name="primary_dark">#202020</color>
+    <color name="primary_light">#545454</color>
+    // Colores Secundarios Night
+    <color name="secondary">#7E7E7E</color>
+    <color name="secondary_dark">#656565</color>
+    <color name="secondary_light">#B3B3B3</color>
+
+    // Colores para texto
+    <color name="text_color">#FFFFFF</color>
+
+</resources>
