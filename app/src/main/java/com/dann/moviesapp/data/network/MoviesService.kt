@@ -9,8 +9,8 @@ class MoviesService @Inject constructor(private val api: MoviesAPIClient) {
 
     suspend fun getMovies():List<Movie>{
         return withContext(Dispatchers.IO){
-            val response = api.getAllMovies()
-            response.body() ?: emptyList()
+            val response = api.getAllMovies().body()
+            response?.results ?: emptyList()
         }
     }
 
