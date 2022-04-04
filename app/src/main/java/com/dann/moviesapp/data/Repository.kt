@@ -6,7 +6,11 @@ import javax.inject.Inject
 
 class Repository @Inject constructor(private val api:MoviesService){
 
-    suspend fun getAllMovies(): List<Movie> {
-        return api.getMovies()
+    suspend fun getAllPopularMovies(): List<Movie> {
+        return api.getPopularMovies()
+    }
+
+    suspend fun getAllPlayingNowMovies(): List<Movie> {
+        return api.getPlayingNowMovies()
     }
 }
