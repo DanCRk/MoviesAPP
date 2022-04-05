@@ -1,6 +1,7 @@
 package com.dann.moviesapp.ui.view
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -57,6 +58,9 @@ class PlayingNowFragment : Fragment() {
     }
 
     private fun onItemSelected(movie: Movie){
+        val intent = Intent(activity, MovieDetailsActivity::class.java)
+        intent.putExtra("movie", movie)
+        activity?.startActivity(intent)
     }
 
 }

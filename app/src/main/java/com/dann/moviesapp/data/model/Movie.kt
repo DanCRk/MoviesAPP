@@ -1,5 +1,7 @@
 package com.dann.moviesapp.data.model
 
+import java.io.Serializable
+
 data class Movie(
     val adult: Boolean = false,
     val backdrop_path: String = "_",
@@ -14,4 +16,4 @@ data class Movie(
     val video: Boolean = false,
     val vote_average: Double = 0.0,
     val vote_count: Int = 0
-)
+):Serializable
