@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.dann.moviesapp.R
 import com.dann.moviesapp.data.model.MovieModel
 import com.dann.moviesapp.databinding.MovieItemBinding
@@ -33,6 +34,7 @@ class AdapterRV(
             val url = "https://image.tmdb.org/t/p/w500${movieModel.poster_path}"
             Glide.with(view.context)
                 .load(url)
+                .transition(DrawableTransitionOptions.withCrossFade())
                 .into(binding.posterImage)
 
             binding.titleMovie.text = movieModel.original_title

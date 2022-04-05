@@ -38,15 +38,15 @@ class PlayingNowFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        vm.onCreate()
-//
-//        vm.movies.observe(viewLifecycleOwner){ movies ->
-//            setReciclerView(movies)
-//        }
-//
-//        vm.isLoading.observe(viewLifecycleOwner){ isloading ->
-//            binding.progressBar.isVisible = isloading
-//        }
+        vm.onCreate()
+
+        vm.movies.observe(viewLifecycleOwner){ movies ->
+            setReciclerView(movies)
+        }
+
+        vm.isLoading.observe(viewLifecycleOwner){ isloading ->
+            binding.progressBar.isVisible = isloading
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")
