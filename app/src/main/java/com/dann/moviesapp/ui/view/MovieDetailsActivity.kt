@@ -5,9 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
-import com.dann.moviesapp.R
-import com.dann.moviesapp.data.model.Movie
+import com.dann.moviesapp.data.model.MovieModel
 import com.dann.moviesapp.databinding.ActivityMoiveDetailsBinding
+import com.dann.moviesapp.domain.model.Movie
 
 class MovieDetailsActivity : AppCompatActivity() {
 

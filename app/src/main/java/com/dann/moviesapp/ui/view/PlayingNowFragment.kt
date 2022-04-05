@@ -11,9 +11,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.dann.moviesapp.data.adapter.AdapterRV
-import com.dann.moviesapp.data.model.Movie
+import com.dann.moviesapp.data.model.MovieModel
 import com.dann.moviesapp.databinding.FragmentPlayingNowBinding
-import com.dann.moviesapp.ui.viewmodel.HomeViewModel
+import com.dann.moviesapp.domain.model.Movie
 import com.dann.moviesapp.ui.viewmodel.PlayingNowViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -38,15 +38,15 @@ class PlayingNowFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        vm.onCreate()
-
-        vm.movies.observe(viewLifecycleOwner){ movies ->
-            setReciclerView(movies)
-        }
-
-        vm.isLoading.observe(viewLifecycleOwner){ isloading ->
-            binding.progressBar.isVisible = isloading
-        }
+//        vm.onCreate()
+//
+//        vm.movies.observe(viewLifecycleOwner){ movies ->
+//            setReciclerView(movies)
+//        }
+//
+//        vm.isLoading.observe(viewLifecycleOwner){ isloading ->
+//            binding.progressBar.isVisible = isloading
+//        }
     }
 
     @SuppressLint("NotifyDataSetChanged")

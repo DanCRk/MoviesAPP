@@ -6,11 +6,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dann.moviesapp.R
-import com.dann.moviesapp.data.model.Movie
+import com.dann.moviesapp.data.model.MovieModel
 import com.dann.moviesapp.databinding.MovieItemBinding
+import com.dann.moviesapp.domain.model.Movie
 
 class AdapterRV(
-    private val movies:List<Movie>,
+    private val movieModels:List<Movie>,
     private val onClickListener:(Movie) -> Unit
 ): RecyclerView.Adapter<AdapterRV.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -19,27 +20,27 @@ class AdapterRV(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(movies[position], onClickListener)
+        holder.bind(movieModels[position], onClickListener)
     }
 
-    override fun getItemCount(): Int = movies.size
+    override fun getItemCount(): Int = movieModels.size
 
     class ViewHolder(val view: View):RecyclerView.ViewHolder(view) {
 
         private val binding = MovieItemBinding.bind(view)
 
-        fun bind(movie: Movie, onClickListener: (Movie) -> Unit) {
-            val url = "https://image.tmdb.org/t/p/w500${movie.poster_path}"
+        fun bind(movieModel: Movie, onClickListener: (Movie) -> Unit) {
+            val url = "https://image.tmdb.org/t/p/w500${movieModel.poster_path}"
             Glide.with(view.context)
                 .load(url)
                 .into(binding.posterImage)
 
-            binding.titleMovie.text = movie.original_title
+            binding.titleMovie.text = movieModel.original_title
 
-            binding.popularity.text = movie.popularity.toString()
+            binding.popularity.text = movieModel.popularity.toString()
 
             itemView.setOnClickListener {
-                onClickListener(movie)
+                onClickListener(movieModel)
             }
         }
 
